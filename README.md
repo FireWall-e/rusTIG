@@ -6,4 +6,6 @@ After download completed, **run it as administrator**.<br/>
 <br/>In the terminal window you should be able to see following:
 - path to your git executables folder;
 - full paths to a newly created commands.
-
+### List of commands
+#####git crepo
+#####git depo
