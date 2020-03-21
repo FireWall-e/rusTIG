@@ -1,5 +1,5 @@
 # rusTIG
-No dependency Git CLI extension written in Rust
+No dependency Git CLI extension written in [Rust](https://www.rust-lang.org/).
 ### How to use
 Download main executable here: [rusTIG.exe](https://github.com/FireWall-e/rusTIG/raw/master/target/release/rusTIG.exe)<br/>
 After download completed, **run it as administrator**.<br/>
