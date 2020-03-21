@@ -1,5 +1,5 @@
 /target/*
 !/target/release/
 /target/release/*
-!/target/release/git-*.exe
+!/target/release/*.exe
 
