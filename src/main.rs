@@ -14,7 +14,7 @@ fn finish() {
     write!(stdout, "\nPress ENTER to exit...").unwrap();
     stdout.flush().unwrap();
     // Read a single byte and discard
-    let _ = stdin.read(&mut [0]).unwrap();
+    stdin.read(&mut [0]).unwrap();
 }
 
 fn main() {
@@ -31,14 +31,17 @@ fn main() {
                          .expect("Error while executing 'git --exec-path' command!");
     // Raw path
     let mut git_executables_path =  str::from_utf8(&output.stdout).unwrap().to_owned();
+
     // Remove new line symbol
     git_executables_path.truncate(git_executables_path.len() - 1);
     println!("Git executables path is: {:?}", git_executables_path);
+
     // Iterate through created commands
     for command_name in git_commands {
         // Full path to executable
         git_executables_path = format!("{}/{}.exe", git_executables_path, command_name);
         println!("Path to the new executable is: {}", git_executables_path);
+
         // Build link to the githubs executable file
         let file_url = format!(
             "https://github.com/FireWall-e/rusTIG/raw/{}/target/{}/{}.exe",
@@ -46,6 +49,7 @@ fn main() {
             build_version,
             command_name
         );
+
         // Get compiled executable content
         let mut file_content = reqwest::get(&file_url).expect("Request failed");
         // Create new empty file
@@ -53,6 +57,7 @@ fn main() {
         // Put file_content inside file
         io::copy(&mut file_content, &mut file).expect("Failed to copy content");
     }
+
     // Terminate execution after key press
     finish();
 }
