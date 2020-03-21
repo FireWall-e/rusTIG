@@ -34,12 +34,12 @@ fn main() {
     // Remove new line symbol
     git_executables_path.truncate(git_executables_path.len() - 1);
     println!("Git executables path is: {:?}", git_executables_path);
-    // Iterate though created commands
+    // Iterate through created commands
     for command_name in git_commands {
         // Full path to executable
         git_executables_path = format!("{}/{}.exe", git_executables_path, command_name);
         println!("Path to the new executable is: {}", git_executables_path);
-        // Build link to the githubs executable command file
+        // Build link to the githubs executable file
         let file_url = format!(
             "https://github.com/FireWall-e/rusTIG/raw/{}/target/{}/{}.exe",
             branch,
