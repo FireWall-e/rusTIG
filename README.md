@@ -1,5 +1,6 @@
 # rusTIG
 **No dependency, cross-platform, native** Git CLI extension written in [Rust](https://www.rust-lang.org/).<br/>
+
 ***Works with users only!***
 ## How to use
 **Download** executable file from here: [rusTIG.exe](https://github.com/FireWall-e/rusTIG/raw/master/target/release/rusTIG.exe).<br/>
