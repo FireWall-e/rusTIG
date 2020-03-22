@@ -5,7 +5,7 @@
 After download completed, **run it as administrator**.<br/>
 <br/>In the terminal window you should be able to see following:
 - path to your git executables folder;
-- full paths to a newly created commands.
+- full paths to a newly created commands.<br/>
 **After installation** you could simply **run new command as usual**, e.g. git crepo
 ### List of commands
 ##### git crepo<br/>
