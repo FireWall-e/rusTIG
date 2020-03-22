@@ -7,7 +7,7 @@ fn main() {
 
     // Intro message
     println!("\nPlease provide the data requested below to setup rusTIG environment :)");
-    println!("GitHub username: ");
+    println!("GitHub username:");
     stdout().flush().unwrap();
 
     // Read user input and assign its value into rustig.username
@@ -16,10 +16,12 @@ fn main() {
             .arg("config")
             .arg("--global")
             .arg("rustig.username")
-            .arg(input.replace('\n', "")).output().expect("");
+            .arg(input.replace('\n', ""))
+            .output()
+            .expect("");
     input.clear();
     
-    println!("\nGitHub access token: ");
+    println!("\nGitHub access token:");
     stdout().flush().unwrap();
 
     // Read user input and assign its value into rustig.token
@@ -28,7 +30,9 @@ fn main() {
             .arg("config")
             .arg("--global")
             .arg("rustig.token")
-            .arg(input.replace('\n', "")).output().expect("");
+            .arg(input.replace('\n', ""))
+            .output()
+            .expect("");
 
     println!("\nSetup completed! Now you can use rusTIG advanced commands :)");
 }
