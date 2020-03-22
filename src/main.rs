@@ -1,18 +1,13 @@
 extern crate reqwest;
 
-use std::io;
-use std::fs::File;
-use std::process::Command;
 use std::str;
-use std::io::prelude::*;
+use std::process::Command;
+use std::io::{stdin, copy, prelude::Read};
+use std::fs::File;
 
 fn finish() {
-    let mut stdin = io::stdin();
-    let mut stdout = io::stdout();
-    // We want the cursor to stay at the end of the line,
-    // so we print without a newline and flush manually.
-    write!(stdout, "\nPress ENTER to exit...").unwrap();
-    stdout.flush().unwrap();
+    let mut stdin = stdin();
+    println!("\nPress ENTER to exit...");
     // Read a single byte and discard
     stdin.read(&mut [0]).unwrap();
 }
@@ -23,7 +18,10 @@ fn main() {
     // Cargo build version
     let build_version = "release";
     // Created commands
-    let git_commands = ["git-crepo"].into_iter();
+    let git_commands = [
+        "git-crepo", // Create GitHub repository
+        "git-rustig" // Setup Git global config
+    ].into_iter();
     // Get git executables path
     let output = Command::new("git")
                          .arg("--exec-path")
@@ -55,7 +53,7 @@ fn main() {
         // Create new empty file
         let mut file = File::create(&git_executables_path).expect("Failed to create file");
         // Put file_content inside file
-        io::copy(&mut file_content, &mut file).expect("Failed to copy content");
+        copy(&mut file_content, &mut file).expect("Failed to copy content");
     }
 
     // Terminate execution after key press
