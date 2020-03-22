@@ -22,3 +22,7 @@ Acceptable arguments:
   e.g. 'git crepo myprivaterepo --private' - creates new private repository 'mynewprivaterepo'
 ### git depo
 **Deletes GitHub repository**<br/>
+
+Acceptable arguments:
+- **repository name**<br/>
+  e.g. 'git depo myoldrepo' - deletes repository 'myoldrepo'
