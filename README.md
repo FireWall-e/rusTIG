@@ -6,8 +6,9 @@ After download completed, **run it as administrator**.<br/>
 <br/>In the terminal window you should be able to see following:
 - path to your git executables folder;
 - full paths to a newly created commands.<br/>
-**After installation** you could simply **run new command as usual**, e.g. git crepo
+<br/>**After installation** you could simply **run new command as usual**, e.g. git crepo
 ### List of commands
+**Some commands may require additional auth data, such as GitHub username and [token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token) to access [GitHub API](https://developer.github.com/v3/)**
 ##### git crepo<br/>
 Create github repository<br/>
 ##### git depo
