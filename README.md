@@ -14,7 +14,7 @@ It is recommended to run 'git rustig' once installation completed to setup envir
 ### git crepo<br/>
 **Creates github repository**<br/>
 
-Accepted arguments:
+Acceptable arguments:
 - **repository name**<br/>
   e.g. 'git crepo mynewrepo' - creates new public repository 'mynewrepo'
   
