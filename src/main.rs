@@ -20,11 +20,8 @@ fn main() {
                          .arg("--exec-path")
                          .output()
                          .expect("Error while executing 'git --exec-path' command!");
-    // Raw path
-    let mut git_executables_path =  str::from_utf8(&output.stdout).unwrap().to_owned();
-
-    // Remove new line symbol
-    git_executables_path.truncate(git_executables_path.len() - 1);
+    // Retrieve executables path from command result output
+    let git_executables_path =  str::from_utf8(&output.stdout).unwrap().to_owned().replace('\n', "");
     println!("Git executables path is: {:?}", git_executables_path);
 
     // Iterate through created commands
@@ -57,7 +54,7 @@ fn finish() {
     let mut stdin = stdin();
     // Commands installation completed. Please run 'git rustig' and follow further steps to complete setup
     println!("\nCommands installation completed!");
-    println!("Please run 'git rustig' and follow further instructions to complete setup.");
+    println!("Please run 'git rustig' and follow further instructions to finish setup.");
     println!("\nPress ENTER to exit...");
     // Read a single byte and discard
     stdin.read(&mut [0]).unwrap();
