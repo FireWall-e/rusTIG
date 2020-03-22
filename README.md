@@ -12,7 +12,7 @@ After download completed, **run it as administrator**.<br/>
 **Some commands may require additional auth data, such as GitHub username and [token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token) to access [GitHub API](https://developer.github.com/v3/).<br/>
 It is recommended to run 'git rustig' once installation completed to setup environment.**
 ### git crepo<br/>
-**Creates github repository**<br/>
+**Creates GitHub repository**<br/>
 
 Acceptable arguments:
 - **repository name**<br/>
@@ -21,4 +21,4 @@ Acceptable arguments:
 - **--private** flag (true if provided)<br/>
   e.g. 'git crepo myprivaterepo --private' - creates new private repository 'mynewprivaterepo'
 ### git depo
-**Deletes github repository**<br/>
+**Deletes GitHub repository**<br/>
