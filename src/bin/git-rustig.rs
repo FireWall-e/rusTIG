@@ -1,13 +1,34 @@
-use std::io::{stdin, stdout, BufRead, Write};
+use std::io::{stdin, stdout, Write};
+use std::process::Command;
 
 fn main() {
-    println!("\nPlease provide the data requested below to setup rusTIG environment :)");
-    print!("GitHub username: ");
-    stdout().flush().unwrap();
     let stdin = stdin();
-    let mut iterator = stdin.lock().lines();
-    let line1 = iterator.next().unwrap().unwrap();
+    let mut input = String::new();
 
-    println!("Buffer is {:?}", line1);
-    // println!("Handle is {:?}", handle);
+    // Intro message
+    println!("\nPlease provide the data requested below to setup rusTIG environment :)");
+    println!("GitHub username: ");
+    stdout().flush().unwrap();
+
+    // Read user input and assign its value into rustig.username
+    stdin.read_line(&mut input);
+    Command::new("git")
+            .arg("config")
+            .arg("--global")
+            .arg("rustig.username")
+            .arg(input.replace('\n', "")).output().expect("");
+    input.clear();
+    
+    println!("\nGitHub access token: ");
+    stdout().flush().unwrap();
+
+    // Read user input and assign its value into rustig.token
+    stdin.read_line(&mut input);
+    Command::new("git")
+            .arg("config")
+            .arg("--global")
+            .arg("rustig.token")
+            .arg(input.replace('\n', "")).output().expect("");
+
+    println!("\nSetup completed! Now you can use rusTIG advanced commands :)");
 }
