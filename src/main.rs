@@ -6,6 +6,8 @@ use std::io::{stdin, copy, prelude::Read};
 use std::fs::File;
 
 fn main() {
+    println!("Processing...");
+    
     // Git branch name
     let branch = "master";
     // Cargo build version
