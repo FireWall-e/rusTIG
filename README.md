@@ -13,5 +13,11 @@ After download completed, **run it as administrator**.<br/>
 It is recommended to run 'git rustig' once installation completed to setup environment.**
 ##### git crepo<br/>
 Create github repository<br/>
+Accepted arguments:
+- repository name<br/>
+  e.g. 'git crepo mynewrepo' - creates new public repository 'mynewrepo'
+  
+- privacy flag (true if provided)<br/>
+  e.g. 'git crepo myprivaterepo --private' - creates new private repository 'mynewprivaterepo'
 ##### git depo
 Delete github repository
