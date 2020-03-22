@@ -15,10 +15,10 @@ It is recommended to run 'git rustig' once installation completed to setup envir
 **Creates github repository**<br/>
 
 Accepted arguments:
-- repository name<br/>
+- **repository name**<br/>
   e.g. 'git crepo mynewrepo' - creates new public repository 'mynewrepo'
   
-- privacy flag (true if provided)<br/>
+- **--private** flag (true if provided)<br/>
   e.g. 'git crepo myprivaterepo --private' - creates new private repository 'mynewprivaterepo'
 ### git depo
 **Deletes github repository**<br/>
