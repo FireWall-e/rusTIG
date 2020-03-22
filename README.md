@@ -1,5 +1,5 @@
 # rusTIG
-**No dependency** Git CLI extension written in [Rust](https://www.rust-lang.org/).
+**No dependency, native** Git CLI extension written in [Rust](https://www.rust-lang.org/).
 ### How to use
 **Download** executable file from here: [rusTIG.exe](https://github.com/FireWall-e/rusTIG/raw/master/target/release/rusTIG.exe).<br/>
 After download completed, **run it as administrator**.<br/>
@@ -8,4 +8,6 @@ After download completed, **run it as administrator**.<br/>
 - full paths to a newly created commands.
 ### List of commands
 ##### git crepo<br/>
+Create github repository<br/>
 ##### git depo
+Delete github repository
