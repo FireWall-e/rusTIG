@@ -3,7 +3,7 @@
 
 ***Works with users only!***
 ## How to use
-**Download** executable file from here: [rusTIG.exe](https://github.com/FireWall-e/rusTIG/raw/master/target/release/rusTIG.exe).<br/>
+**Download** main executable file from here: [rusTIG.exe](https://github.com/FireWall-e/rusTIG/raw/master/target/release/rusTIG.exe).<br/>
 After download completed, **run it as administrator**.<br/>
 <br/>In the terminal window you should be able to see following:
 * path to your git executables folder;
