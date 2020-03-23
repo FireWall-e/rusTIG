@@ -4,13 +4,14 @@ use std::str;
 use std::env;
 use std::process::Command;
 
-pub fn main() {
+// https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user
+fn main() {
     println!("Processing...");
 
     // Parse CLI arguments
     let args: Vec<String> = env::args().collect();
 
-     // Retrieve token from git config
+    // Retrieve token from git config
     let mut output = Command::new("git")
                              .arg("config")
                              .arg("rustig.username")
@@ -28,11 +29,7 @@ pub fn main() {
     // Assign token
     let github_access_token = str::from_utf8(&output.stdout).unwrap().to_owned().replace('\n', "");
 
-    // https://developer.github.com/v3/repos/#parameters-4
-    let request_url = format!(
-        "https://api.github.com/user/repos?access_token={}",
-        github_access_token
-    );
+    let request_url = "https://api.github.com/user/repos";
 
     // Related topics:
     // https://stackoverflow.com/questions/28385884/how-to-create-repository-in-github-through-github-api
@@ -56,14 +53,14 @@ pub fn main() {
     }
     
     // Send post request to GitHub api with parameters
-    let response = client.post(&request_url)
+    let response = client.post(request_url)
+                         .basic_auth(&github_username, Some(&github_access_token))
                          .body(request_body)
                          .send()
                          .unwrap();
     
     // Check response status
-    // 201 - success
-    // 40X - fail
+    // Expected 201
     if response.status().is_success() {
         // Construct link to repository
         let created_repo_url = format!(
