@@ -17,6 +17,7 @@ fn main() {
         "git-crepo", // Create GitHub repository
         "git-rustig" // Setup Git global config
     ].into_iter();
+    
     // Get git executables path
     let output = Command::new("git")
                          .arg("--exec-path")
